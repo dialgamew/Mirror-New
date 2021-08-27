@@ -451,9 +451,9 @@ class GoogleDriveHelper:
                     urls = f'{INDEX_URL}/{url_path}?a=view'
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = short_url(url)
-                        buttons.buildbutton("⚡ Index Link", siurl)
+                        buttons.buildbutton(f"{INDEX_BUTTON}", siurl)
                         if VIEW_LINK:
-                            siurls = short_url(urls)
+			    siurls = short_url(urls)
                             buttons.buildbutton(f"{VIEW_BUTTON}", siurls)
                     else:
                         buttons.buildbutton(f"{INDEX_BUTTON}", url)
@@ -480,7 +480,6 @@ class GoogleDriveHelper:
             return msg, ""
         return msg, InlineKeyboardMarkup(buttons.build_menu(2))
 
-
     def cloneFolder(self, name, local_path, folder_id, parent_id):
         LOGGER.info(f"Syncing: {local_path}")
         files = self.getFilesByFolderId(folder_id)
@@ -504,7 +503,6 @@ class GoogleDriveHelper:
             if self.is_cancelled:
                 break
 
-
     @retry(wait=wait_exponential(multiplier=2, min=3, max=6), stop=stop_after_attempt(5),
            retry=retry_if_exception_type(HttpError), before=before_log(LOGGER, logging.DEBUG))
     def create_directory(self, directory_name, parent_id):
@@ -520,7 +518,6 @@ class GoogleDriveHelper:
             self.__set_permission(file_id)
         LOGGER.info("Created G-Drive Folder:\nName: {}\nID: {} ".format(file.get("name"), file_id))
         return file_id
-
 
     def upload_dir(self, input_directory, parent_id):
         list_dirs = os.listdir(input_directory)
@@ -543,7 +540,6 @@ class GoogleDriveHelper:
             if self.is_cancelled:
                 break
         return new_id
-
 
     def authorize(self):
         # Get credentials
@@ -570,8 +566,6 @@ class GoogleDriveHelper:
                 f'accounts/{SERVICE_ACCOUNT_INDEX}.json',
                 scopes=self.__OAUTH_SCOPE)
         return build('drive', 'v3', credentials=credentials, cache_discovery=False)
-
-
     def edit_telegraph(self):
         nxt_page = 1 
         prev_page = 0
@@ -621,7 +615,7 @@ class GoogleDriveHelper:
                     furl = f"https://drive.google.com/drive/folders/{file.get('id')}"
                     msg += f"📁 <code>{file.get('name')}<br>(folder)</code><br>"
                     if SHORTENER is not None and SHORTENER_API is not None:
-                        sfurl = short_url(furl)
+                        sfurl = sfurl = short_url(furl)
                         msg += f"<b><a href={sfurl}>{TELEGRAPH_DRIVE}</a></b>"
                     else:
                         msg += f"<b><a href={furl}>{TELEGRAPH_DRIVE}</a></b>"
@@ -650,10 +644,10 @@ class GoogleDriveHelper:
                         url = f'{INDEX_URL}/{url_path}'
                         urls = f'{INDEX_URL}/{url_path}?a=view'
                         if SHORTENER is not None and SHORTENER_API is not None:
-                            short_url(url)
+                            siurl = short_url(url)
                             msg += f' <b>| <a href="{siurl}">{TELEGRAPH_INDEX}</a></b>'
                             if VIEW_LINK:
-                                siurls = short_url(urls)
+				siurls = short_url(urls)
                                 msg += f' <b>| <a href="{siurls}">{TELEGRAPH_VIEW}</a></b>'
                         else:
                             msg += f' <b>| <a href="{url}">{TELEGRAPH_INDEX}</a></b>'
