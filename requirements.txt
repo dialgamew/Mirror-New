@@ -36,3 +36,4 @@ youtube_dl
 yt-dlp
 quoters
 qbittorrent-api
+pyshorteners

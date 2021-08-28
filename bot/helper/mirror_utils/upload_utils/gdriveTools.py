@@ -480,6 +480,7 @@ class GoogleDriveHelper:
             return msg, ""
         return msg, InlineKeyboardMarkup(buttons.build_menu(2))
 
+
     def cloneFolder(self, name, local_path, folder_id, parent_id):
         LOGGER.info(f"Syncing: {local_path}")
         files = self.getFilesByFolderId(folder_id)
@@ -503,6 +504,7 @@ class GoogleDriveHelper:
             if self.is_cancelled:
                 break
 
+
     @retry(wait=wait_exponential(multiplier=2, min=3, max=6), stop=stop_after_attempt(5),
            retry=retry_if_exception_type(HttpError), before=before_log(LOGGER, logging.DEBUG))
     def create_directory(self, directory_name, parent_id):
@@ -518,6 +520,7 @@ class GoogleDriveHelper:
             self.__set_permission(file_id)
         LOGGER.info("Created G-Drive Folder:\nName: {}\nID: {} ".format(file.get("name"), file_id))
         return file_id
+
 
     def upload_dir(self, input_directory, parent_id):
         list_dirs = os.listdir(input_directory)
@@ -540,6 +543,7 @@ class GoogleDriveHelper:
             if self.is_cancelled:
                 break
         return new_id
+
 
     def authorize(self):
         # Get credentials
@@ -566,6 +570,8 @@ class GoogleDriveHelper:
                 f'accounts/{SERVICE_ACCOUNT_INDEX}.json',
                 scopes=self.__OAUTH_SCOPE)
         return build('drive', 'v3', credentials=credentials, cache_discovery=False)
+
+
     def edit_telegraph(self):
         nxt_page = 1 
         prev_page = 0
