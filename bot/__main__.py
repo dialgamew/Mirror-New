@@ -97,6 +97,10 @@ def bot_help(update, context):
 
 /{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to Google Drive
 
+<code>/{BotCommands.MirrorCommand} qb</code> [download_url][magnet_link]: Start mirroring the link to Google Drive using qbittorrent
+
+<code>/{BotCommands.MirrorCommand} qbs</code> [download_url][magnet_link]: Start mirroring the link to Google Drive and Select file before downloading using qbittorrent
+
 /{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
 
 /{BotCommands.ZipMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived (.zip) version of the download
@@ -144,6 +148,10 @@ def bot_help(update, context):
 /{BotCommands.HelpCommand}: To get this message
 
 /{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to Google Drive
+
+<code>/{BotCommands.MirrorCommand} qb</code> [download_url][magnet_link]: Start mirroring the link to Google Drive using qbittorrent
+
+<code>/{BotCommands.MirrorCommand} qbs</code> [download_url][magnet_link]: Start mirroring the link to Google Drive and Select file before downloading using qbittorrent
 
 /{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
 
