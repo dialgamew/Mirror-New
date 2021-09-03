@@ -11,11 +11,15 @@ class AriaDownloadStatus(Status):
     def __init__(self, gid, listener):
         super().__init__()
         self.upload_name = None
+        self.is_archiving = False
         self.__gid = gid
         self.__download = get_download(self.__gid)
         self.__uid = listener.uid
         self.__listener = listener
         self.message = listener.message
+        self.last = None
+        self.is_waiting = False
+        self.is_extracting = False
 
     def __update(self):
         self.__download = get_download(self.__gid)
@@ -59,12 +63,11 @@ class AriaDownloadStatus(Status):
     def status(self):
         download = self.aria_download()
         if download.is_waiting:
-            status = MirrorStatus.STATUS_WAITING
+            return MirrorStatus.STATUS_WAITING
         elif download.has_failed:
-            status = MirrorStatus.STATUS_FAILED
+            return MirrorStatus.STATUS_FAILED
         else:
-            status = MirrorStatus.STATUS_DOWNLOADING
-        return status
+            return MirrorStatus.STATUS_DOWNLOADING
 
     def aria_download(self):
         self.__update()

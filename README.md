@@ -1,11 +1,41 @@
+# <b>MIRROR-NEW</b>
+
+![MIRROR-NEW](https://sinnerdrive.jack-need-boost.workers.dev/0:/mirr//20210824_150544_1_1.jpg)
+
+<p>
+  <a href="https://www.python.org">
+    <img src="http://ForTheBadge.com/images/badges/made-with-python.svg">
+
+  </a>
+</P>
+
+<p>
+  <a href="https://github.com/Anime-Republic/Mirror-New/stargazers">
+    <img src="https://img.shields.io/github/stars/Anime-Republic/Mirror-New?style=social">
+
+  </a>
+  
+  <a href="https://github.com/Anime-Republic/Mirror-New/fork">
+    <img src="https://img.shields.io/github/forks/Anime-Republic/Mirror-New?label=Fork&style=social">
+
+  </a>
+</p>
+
 **This Mirror Bot** is a _multipurpose_ Telegram Bot writen in Python for mirroring files on the Internet to our beloved Google Drive.
+
+# Support chat
+
+<a href="https://t.me/XcodersHubChat">
+    <img src="https://sinnerdrive.jack-need-boost.workers.dev/0:/mirr//xcoders%20%282%29.jpg">
+
+</a>
 
 # Features supported:
 <details>
     <summary><b>Click Here For More Details</b></summary>
 
 ## Additional Features
-- Updater (**NOTE**: You must upload your **token.pickle** to Index and fill your **token.pickle** url to **TOKEN_PICKLE_URL**, because your **token.pickle** will deleted after update, for more info please check [Setting up config file](https://github.com/yuno74/Mirror-New#setting-up-config-file))
+- Updater (**NOTE**: You must upload your **token.pickle** to Index and fill your **token.pickle** url to **TOKEN_PICKLE_URL**, because your **token.pickle** will deleted after update, for more info please check [Setting up config file](https://github.com/Anime-Republic/Mirror-New#setting-up-config-file))
 - Limiting size Torrent/Direct, Tar/Unzip, Mega, cloning Google Drive support
 - Stop duplicate cloning Google Drive & mirroring Mega support
 - Tar/Unzip Google Drive link support
@@ -60,7 +90,7 @@ Deploying is pretty much straight forward and is divided into several steps as f
 
 - Clone this repo:
 ```
-git clone https://github.com/Slam-Team/slam-mirrorbot mirrorbot/
+git clone https://github.com/Anime-Republic/Mirror-New mirrorbot/
 cd mirrorbot
 ```
 
@@ -71,6 +101,10 @@ sudo apt install python3
 ```
 Install Docker by following the [official Docker docs](https://docs.docker.com/engine/install/debian/)
 
+OR
+```
+sudo snap install docker 
+```
 - For Arch and it's derivatives:
 ```
 sudo pacman -S docker python
@@ -93,6 +127,16 @@ docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfi
 ```
 sudo docker run mirrorbot
 ```
+  
+- To stop Docker run 
+```
+  sudo docker ps
+```
+```
+sudo docker stop id
+```
+## Deploying on Heroku with Github Workflow
+<p><a href="https://github.com/Anime-Republic/Mirror-New/blob/main/HerokuGuide.md"> <img src="https://img.shields.io/badge/Deploy%20Guide-blueviolet?style=for-the-badge&logo=heroku" width="180""/></a></p>
 
 ## Setting up config file
 <details>
@@ -110,11 +154,11 @@ sudo docker run mirrorbot
 - **DOWNLOAD_STATUS_UPDATE_INTERVAL**: A short interval of time in seconds after which the Mirror progress message is updated. (I recommend to keep it `5` seconds at least).
     
 ## Optional Vars
-- **DATABASE_URL**: Your Database URL. See [Generate Database](https://github.com/yuno74/Mirror-New/tree/master#generate-database) to generate database (**NOTE**: If you use database you can save your sudo id permanent using `/addsudo` command)
+- **DATABASE_URL**: Your Database URL. See [Generate Database](https://github.com/Anime-Republic/Mirror-New/tree/master#generate-database) to generate database (**NOTE**: If you use database you can save your sudo id permanent using `/addsudo` command)
 - **AUTHORIZED_CHATS**: Fill user_id and chat_id (not username) of you want to authorize, Seprate them with space, Examples: `-0123456789 -1002489569`.
 - **SUDO_USERS**: Fill user_id (not username) of you want to sudoers, Seprate them with space, Examples: `0123456789 181568167` (**NOTE**: If you want save sudo id permanent without database, you must fill your sudo id there)
 - **IGNORE_PENDING_REQUESTS**: If you want the bot to ignore pending requests after it restarts, set this to `True`.
-- **USE_SERVICE_ACCOUNTS**: (Leave empty if unsure) Whether to use Service Accounts or not. For this to work see [Using Service Accounts](https://github.com/yuno74/Mirror-New/blob/main/CreateSA.md)
+- **USE_SERVICE_ACCOUNTS**: (Leave empty if unsure) Whether to use Service Accounts or not. For this to work see [Using Service Accounts](https://github.com/Anime-Republic/Mirror-New/blob/main/CreateSA.md)
 - **INDEX_URL**: Refer to [Bhadoo Index](https://gitlab.com/ParveenBhadooOfficial/Google-Drive-Index) The URL should not have any trailing '/'
 - **STATUS_LIMIT**: Status limit with buttons (**NOTE**: Recommend limit status to `4` tasks max).
 - **MEGA_API_KEY**: Mega.nz api key to mirror mega.nz links. Get it from [Mega SDK Page](https://mega.nz/sdk)
@@ -135,7 +179,7 @@ exe.io, gplinks.in, shrinkme.io, urlshortx.com, shortzon.com
 ## If you want to use Credentials externally from Index Links, fill these vars with the direct links.These are optional, if you don't know, simply leave them, don't fill anything in them.
 - **TOKEN_PICKLE_URL**: Only if you want to load your **token.pickle** externally from an Index Link. Fill this with the direct link of that file.
 - **ACCOUNTS_ZIP_URL**: Only if you want to load your Service Account externally from an Index Link. Archive the accounts folder to a zip file. Fill this with the direct link of that file.
-    If  you don't know how to create token.pickle, [Click Here](https://github.com/yuno74/Mirror-New/blob/main/CreateSA.md)
+    If  you don't know how to create token.pickle, [Click Here](https://github.com/Anime-Republic/Mirror-New/blob/main/CreateSA.md)
     
 ## Heroku Details
 - **HEROKU_APP_NAME**: (Only if you deploying on Heroku) Your Heroku app name.

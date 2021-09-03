@@ -2,6 +2,7 @@ aiohttp
 anytree
 aria2p
 appdirs
+attrdict
 beautifulsoup4
 cloudscrape
 cfscrape
@@ -32,8 +33,11 @@ tenacity
 TgCrypto
 torrentool
 urllib3
-youtube_dl
 yt-dlp
 quoters
-qbittorrent-api
 pyshorteners
+youtube_dl
+bs4
+natsort
+Pillow
+qbittorrent-api
