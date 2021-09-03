@@ -9,9 +9,6 @@ from typing import Tuple
 from html_telegraph_poster import TelegraphPoster
 from bot import HEROKU_API_KEY, HEROKU_APP_NAME
 
-# Implement by https://github.com/jusidama18
-# Setting Message
-
 def get_text(message: Message) -> [None, str]:
     """Extract Text From Commands"""
     text_to_return = message.text
@@ -24,7 +21,6 @@ def get_text(message: Message) -> [None, str]:
             return None
     else:
         return None
-
 heroku_client = heroku3.from_key(HEROKU_API_KEY) if HEROKU_API_KEY else None
 
 def check_heroku(func):
