@@ -28,7 +28,7 @@ class MirrorStatus:
     STATUS_FAILED = "🚫 ғᴀɪʟᴇᴅ"
     STATUS_ARCHIVING = "🔐 ᴀʀᴄʜɪᴠɪɴɢ"
     STATUS_EXTRACTING = "📂 ᴇxᴛʀᴀᴄᴛɪɴɢ"
-    STATUS_PAUSE = "Paused...⭕️"
+    STATUS_PAUSE = "⏸️ ᴘᴀᴜsᴇᴅ"
 
 
 PROGRESS_MAX_SIZE = 100 // 8
@@ -177,8 +177,8 @@ def get_readable_message():
                 except:
                     pass
             	try:
-                    msg += f"\n<b>Seeders:</b> <code>{download.torrent_info().num_seeds}</code>" \
-                           f" | <b>Leechers:</b> <code>{download.torrent_info().num_leechs}</code>"
+                    msg += f"\n<b>➜ Engine: Qbit</b>\n<b>➜ Peers :</b> <code>{download.torrent_info().num_leechs}</code>" \
+                           f"\n<b>➜ Seeders:</b>:</b> <code>{download.torrent_info().num_seeds}</code>"
                 except:
                     pass
                 msg += f"\n<b>➜ To Cancel :</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
