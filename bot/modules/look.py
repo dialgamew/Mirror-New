@@ -13,8 +13,7 @@ def list_folder(update,context):
     except IndexError:
         sendMessage(f'<b><i>Send A Keyword Along With Search Command</i></b>', context.bot, update)
         return
-    
-    quo_te = Quote.print()    
+   
     reply = sendMessage(f'<b>Searching...🔎</b>', context.bot, update)
 
     LOGGER.info(f"Searching: {search}")
