@@ -119,7 +119,7 @@ class GoogleDriveHelper:
                 if add_title_msg == True:
                     msg = f'<h3>Sᴇᴀʀᴄʜ Rᴇsᴜʟᴛs Fᴏʀ : {fileName}</h3><br><b><a href="https://torrent.animerepublic.workers.dev"> Index Homepage </a></b> ||<b><a href="https://t.me/Arata74"> Owner </a></b><br><br>'
                     add_title_msg = False
-                msg += f"{DRIVE_NAME[INDEX]}"
+                msg += f"🔰 \n{DRIVE_NAME[INDEX]} 🔰\n"
                 for file in response:
                     if file.get('mimeType') == "application/vnd.google-apps.folder":  # Detect Whether Current Entity is a Folder or File.
                         msg += f"📁<code>{file.get('name')}</code> <b>(folder)</b><br>" \
