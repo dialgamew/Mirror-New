@@ -29,7 +29,7 @@ from .helper.ext_utils.bot_utils import get_readable_file_size, get_readable_tim
 from .helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper import button_build
 from bot.helper import get_text, check_heroku
-from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clone, watch, delete, usage, count
+from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clone, watch, delete, usage, count, 1ook
 now=datetime.now(pytz.timezone(f'{TIMEZONE}'))
 
 
@@ -137,6 +137,8 @@ def bot_help(update, context):
 /{BotCommands.UsageCommand}: To see Heroku Dyno Stats (Owner & Sudo only)
 
 /{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
+
+/{BotCommands.LookCommand}: Search trough all drive
 '''
 
     help_string = f'''
@@ -167,6 +169,8 @@ def bot_help(update, context):
 /{BotCommands.UsageCommand}: To see Heroku Dyno Stats (Owner & Sudo only).
 
 /{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
+
+/{BotCommands.LookCommand}: Search trough all drive
 '''
 
     if CustomFilters.sudo_user(update) or CustomFilters.owner_filter(update):
@@ -196,7 +200,8 @@ botcmds = [
         (f'{BotCommands.UnAuthorizeCommand}','Unauth chat [owner/sudo only]'),
         (f'{BotCommands.UsageCommand}','See dyno [owner/sudo only]'),
         (f'{BotCommands.AddSudoCommand}','Add sudo [owner/sudo only]'),
-        (f'{BotCommands.RmSudoCommand}','Remove sudo [owner/sudo only]')
+        (f'{BotCommands.RmSudoCommand}','Remove sudo [owner/sudo only]'),
+        (f'{BotCommands.LookCommand}','Search Trough All Drive')
     ]
 
 

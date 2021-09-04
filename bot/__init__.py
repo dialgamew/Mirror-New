@@ -516,6 +516,13 @@ try:
 except KeyError:
     DOWNLOAD_DIR = '/usr/src/app/downloads/'
 
+try:
+    SEARCH_BOT = getConfig('SEARCH_BOT')
+    if len(DOWNLOAD_DIR) == 0:
+        SEARCH_BOT = None
+except KeyError:
+    SEARCH_BOT = 'search'
+
 updater = tg.Updater(token=BOT_TOKEN)
 bot = updater.bot
 dispatcher = updater.dispatcher
